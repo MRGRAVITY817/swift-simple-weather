@@ -13,10 +13,7 @@ struct ContentView: View {
             BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
             
             VStack {
-                Text("Cupertino, CA")
-                    .font(.system(size: 32, weight: .medium, design: .default))
-                    .foregroundColor(.white)
-                    .padding()
+                CityTextView(cityName: "Cupertino, CA")
                 
                 VStack(spacing: 10) {
                     Image(systemName: "cloud.sun.fill")
@@ -108,12 +105,25 @@ struct WeatherDayView: View {
 struct BackgroundView: View {
     var topColor: Color
     var bottomColor: Color
-
+    
     var body: some View {
         LinearGradient(
             gradient: Gradient(colors: [topColor, bottomColor]),
             startPoint: .topLeading,
             endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+
+struct CityTextView: View {
+    var cityName: String
+    
+    var body: some View {
+        Text("Cupertino, CA")
+            .font(.system(size: 32, weight: .medium, design: .default))
+            .foregroundColor(.white)
+            .padding()
+        
     }
 }
