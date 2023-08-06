@@ -30,19 +30,19 @@ struct ContentView: View {
                     
                     WeatherDayView(dayOfWeek: "WED",
                                    imageName: "sun.max.fill",
-                                   temperature: 76)
+                                   temperature: 55)
                     
                     WeatherDayView(dayOfWeek: "THU",
                                    imageName: "wind.snow",
-                                   temperature: 76)
+                                   temperature: 22)
                     
                     WeatherDayView(dayOfWeek: "FRI",
                                    imageName: "sunset.fill",
-                                   temperature: 76)
+                                   temperature: 61)
                     
                     WeatherDayView(dayOfWeek: "SAT",
                                    imageName: "snowflake",
-                                   temperature: 76)
+                                   temperature: 49)
                 }
                 
                 Spacer()
@@ -83,8 +83,9 @@ struct WeatherDayView: View {
                 .foregroundColor(.white)
             
             Image(systemName: imageName)
-                .renderingMode(.original)
+                .symbolRenderingMode(.palette)
                 .resizable()
+                .foregroundStyle(.white, .orange, .green)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
             
